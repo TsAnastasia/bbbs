@@ -1,28 +1,49 @@
+import cl from "classnames";
 import React, { FC } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { AppRoutesEnum } from "../../routes";
-import HeaderNav from "./nav/HeaderNav";
-import style from "./Header.module.scss";
-import cl from "classnames";
 import { useAppSelector } from "../../hooks/redux";
-import { useDispatch } from "react-redux";
 import { login, logout } from "../../redux/auth/auth-actions";
+import { setMenuOpen } from "../../redux/header/header-actions";
+import { AppRoutesEnum } from "../../routes";
+import style from "./Header.module.scss";
+import HeaderMenu from "./menu/HeaderMenu";
+import HeaderNav from "./nav/HeaderNav";
 
 const Header: FC = () => {
   const dispatch = useDispatch();
   const { isAuth } = useAppSelector((state) => state.auth);
 
+  const {
+    menu: { isOpen: isMenuOpen },
+  } = useAppSelector((state) => state.header);
+
   const handleProfileToggle = () => {
-    console.log("isauth", isAuth);
+    // TODO login popup
     isAuth ? dispatch(logout()) : dispatch(login());
   };
 
+  const handleMenuToggle = () => {
+    // TODO header menu
+    dispatch(setMenuOpen(!isMenuOpen));
+  };
+
+  const handleSearchToggle = () => {
+    // TODO header menu
+  };
+
   return (
-    <header className={style.header}>
+    <header className={cl(style.header, isMenuOpen && style.header_menuOpen)}>
       <button
         type="button"
-        className={cl(style.header__button, style.header__button_menu)}
+        className={cl(
+          style.header__button,
+          isMenuOpen
+            ? style.header__button_menuClose
+            : style.header__button_menu
+        )}
+        onClick={handleMenuToggle}
       />
       <Link to={AppRoutesEnum.MAIN} className={style.header__logo}>
         наставники.про
@@ -32,6 +53,7 @@ const Header: FC = () => {
         <button
           type="button"
           className={cl(style.header__button, style.header__button_search)}
+          onClick={handleSearchToggle}
         />
         <div className={style.header__actionsLine}></div>
         <button
@@ -46,6 +68,7 @@ const Header: FC = () => {
           onClick={handleProfileToggle}
         />
       </div>
+      {isMenuOpen && <HeaderMenu />}
     </header>
   );
 };

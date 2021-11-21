@@ -1,0 +1,80 @@
+@import "../../../index.scss";
+
+.headerMenu {
+  padding: 0 15px 30px;
+  min-height: 410px;
+  box-sizing: border-box;
+
+  border-radius: 0px 0px 30px 30px;
+  background-color: $color-background;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.menu {
+  margin: 0 auto;
+  max-width: 290px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.menuNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.menuColumn {
+  margin: 0;
+  margin-right: 25px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.menuItem {
+  margin: 0 0 15px;
+}
+
+.menuLink {
+  margin: 0;
+
+  font-family: $font-proto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: $color-black;
+
+  &:hover {
+    color: $color-blue;
+  }
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 425px) {
+  .headerMenu {
+    padding-top: 30px;
+    min-height: 340px;
+  }
+}

@@ -2,7 +2,7 @@ import { AllTypes, HeaderActionsEnum, InitialStateType } from "./header-types";
 
 export const initialState = {
   menu: {
-    isOpen: false,
+    isOpen: true,
   },
   search: {
     isOpen: false,

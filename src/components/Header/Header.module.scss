@@ -10,6 +10,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  position: relative;
+}
+
+.header_menuOpen {
+  box-shadow: 0px 5px 5px rgb(0 0 0 / 10%);
 }
 
 .header__logo {
@@ -161,6 +167,10 @@
 .header__button_menu {
   display: none;
   background-image: url("../../assets/images/icons/menu.svg");
+}
+
+.header__button_menuClose {
+  background-image: url("../../assets/images/icons/close.svg");
 }
 
 .header__button_profileLogin {

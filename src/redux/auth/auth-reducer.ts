@@ -1,6 +1,13 @@
+import { IUser } from "../../API/auth/auth-interface";
 import { AllTypes, AuthActionsEnum, InitialStateType } from "./auth-types";
+// TODO: change on fun API
+import users from "../../API/dataForAPI/users.json";
 
-export const initialState = { isAuth: false };
+export const initialState = {
+  // TODO not auth on load
+  isAuth: true,
+  userData: users[0] as IUser,
+};
 
 const authReducer = (
   state = initialState,
