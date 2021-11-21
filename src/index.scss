@@ -1,1 +1,16 @@
 @import "~normalize.css";
+@import "~@fontsource/roboto";
+@import "~@fontsource/open-sans";
+
+$color-blue: #224cff;
+$color-dark: #2e2468;
+$color-black: #000000;
+$color-background: #f3f2f2;
+$color-light-gray: #a7a6a6;
+
+$font-proto: "Open Sans", sans-serif;
+$font-roboto: "Roboto", sans-serif;
+
+body {
+  background-color: $color-background;
+}
