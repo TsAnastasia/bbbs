@@ -1,7 +1,9 @@
 @import "./index.scss";
 
 .app {
+  padding-top: 110px;
   min-height: 100vh;
+  box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
@@ -9,6 +11,12 @@
   align-items: stretch;
 
   background-color: $color-background;
+}
+
+@media screen and (max-width: 425px) {
+  .app {
+    padding-top: 50px;
+  }
 }
 
 .app__main {

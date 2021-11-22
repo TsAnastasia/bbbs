@@ -22,15 +22,21 @@ const Header: FC = () => {
   const handleProfileToggle = () => {
     // TODO login popup
     isAuth ? dispatch(logout()) : dispatch(login());
+
+    handleMenuClose();
   };
 
   const handleMenuToggle = () => {
-    // TODO header menu
     dispatch(setMenuOpen(!isMenuOpen));
   };
 
+  const handleMenuClose = () => {
+    dispatch(setMenuOpen(false));
+  };
+
   const handleSearchToggle = () => {
-    // TODO header menu
+    // TODO search
+    handleMenuClose();
   };
 
   return (
@@ -39,13 +45,18 @@ const Header: FC = () => {
         type="button"
         className={cl(
           style.header__button,
+          style.header__menuButton,
           isMenuOpen
             ? style.header__button_menuClose
             : style.header__button_menu
         )}
         onClick={handleMenuToggle}
       />
-      <Link to={AppRoutesEnum.MAIN} className={style.header__logo}>
+      <Link
+        to={AppRoutesEnum.MAIN}
+        className={style.header__logo}
+        onClick={handleMenuClose}
+      >
         наставники.про
       </Link>
       <HeaderNav />
@@ -61,6 +72,7 @@ const Header: FC = () => {
           className={cl(
             style.header__button,
             style.header__profile,
+            isMenuOpen && style.header__profile_open,
             isAuth
               ? style.header__button_profileLogout
               : style.header__button_profileLogin

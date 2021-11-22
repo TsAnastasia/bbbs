@@ -6,3 +6,5 @@ const dataAPI = {
     return cites;
   },
 };
+
+export default dataAPI;
