@@ -1,24 +1,5 @@
 @import "../../../index.scss";
 
-.headerMenu {
-  padding: 0 15px 30px;
-  min-height: 410px;
-  box-sizing: border-box;
-
-  border-radius: 0px 0px 30px 30px;
-  background-color: $color-background;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
-
-  display: none;
-  align-items: stretch;
-  justify-content: stretch;
-
-  position: absolute;
-  top: calc(100% - 10px);
-  left: 0;
-  right: 0;
-}
-
 .menu {
   margin: 0 auto;
   max-width: 290px;
@@ -90,18 +71,5 @@
 
   &:hover {
     color: $color-blue;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .headerMenu {
-    display: flex;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .headerMenu {
-    padding-top: 30px;
-    min-height: 340px;
   }
 }

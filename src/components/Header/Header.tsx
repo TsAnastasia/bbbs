@@ -80,7 +80,14 @@ const Header: FC = () => {
           onClick={handleProfileToggle}
         />
       </div>
-      {isMenuOpen && <HeaderMenu />}
+      <div
+        className={cl(
+          style.header__menu,
+          isMenuOpen && style.header__menu_open
+        )}
+      >
+        {isMenuOpen && <HeaderMenu />}
+      </div>
     </header>
   );
 };

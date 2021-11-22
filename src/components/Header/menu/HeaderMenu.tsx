@@ -50,55 +50,53 @@ const HeaderMenu: FC = () => {
   });
 
   return (
-    <div className={style.headerMenu}>
-      <div className={style.menu}>
-        <nav className={style.menuNav}>
-          <ul className={style.menuColumn}>
-            {FOOTER_LINKS.map((link) => (
-              <li key={link.route} className={style.menuItem}>
-                <Link
-                  to={link.route}
-                  className={style.menuLink}
-                  onClick={handleClose}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <ul className={style.menuColumn}>
-            {SOCIAL_LINKS.map((link) => (
-              <li key={link.url} className={style.menuItem}>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href={link.url}
-                  className={style.menuLink}
-                  onClick={handleClose}
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        {isAuth && (
-          <div className={style.user}>
-            <button
-              type="button"
-              className={style.user__button}
-              onClick={handleCityChange}
-            >{`${userData.city.name}. Изменить город`}</button>
-            <button
-              type="button"
-              className={style.user__button}
-              onClick={handleLogout}
-            >
-              Выйти
-            </button>
-          </div>
-        )}
-      </div>
+    <div className={style.menu}>
+      <nav className={style.menuNav}>
+        <ul className={style.menuColumn}>
+          {FOOTER_LINKS.map((link) => (
+            <li key={link.route} className={style.menuItem}>
+              <Link
+                to={link.route}
+                className={style.menuLink}
+                onClick={handleClose}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <ul className={style.menuColumn}>
+          {SOCIAL_LINKS.map((link) => (
+            <li key={link.url} className={style.menuItem}>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={link.url}
+                className={style.menuLink}
+                onClick={handleClose}
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      {isAuth && (
+        <div className={style.user}>
+          <button
+            type="button"
+            className={style.user__button}
+            onClick={handleCityChange}
+          >{`${userData.city.name}. Изменить город`}</button>
+          <button
+            type="button"
+            className={style.user__button}
+            onClick={handleLogout}
+          >
+            Выйти
+          </button>
+        </div>
+      )}
     </div>
   );
 };
