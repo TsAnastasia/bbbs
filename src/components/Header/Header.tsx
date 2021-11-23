@@ -1,10 +1,10 @@
 import cl from "classnames";
 import React, { FC } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useAppSelector } from "../../hooks/redux";
-import { login, logout } from "../../redux/auth/auth-actions";
+import { setLoginOpen } from "../../redux/auth/auth-actions";
 import { setMenuOpen } from "../../redux/header/header-actions";
 import { AppRoutesEnum } from "../../routes";
 import style from "./Header.module.scss";
@@ -12,17 +12,15 @@ import HeaderMenu from "./menu/HeaderMenu";
 import HeaderNav from "./nav/HeaderNav";
 
 const Header: FC = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isAuth } = useAppSelector((state) => state.auth);
-
   const {
     menu: { isOpen: isMenuOpen },
   } = useAppSelector((state) => state.header);
 
   const handleProfileToggle = () => {
-    // TODO login popup
-    isAuth ? dispatch(logout()) : dispatch(login());
-
+    isAuth ? navigate(AppRoutesEnum.PROFILE) : dispatch(setLoginOpen(true));
     handleMenuClose();
   };
 

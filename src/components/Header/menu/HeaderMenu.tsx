@@ -87,7 +87,7 @@ const HeaderMenu: FC = () => {
             type="button"
             className={style.user__button}
             onClick={handleCityChange}
-          >{`${userData.city.name}. Изменить город`}</button>
+          >{`${userData?.city.name}. Изменить город`}</button>
           <button
             type="button"
             className={style.user__button}
