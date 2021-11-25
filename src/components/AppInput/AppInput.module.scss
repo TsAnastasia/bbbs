@@ -1,0 +1,25 @@
+.appInput {
+  margin: 0 auto 20px;
+  padding: 15px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "PT Root", "Arial", "Helvetica", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.2px;
+  outline: 0;
+  border: 0;
+  border-radius: 30px;
+  background-color: #f3f2f2;
+}
+
+@media (max-width: 768px) {
+  .appInput {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    font-size: 12px;
+    line-height: 17px;
+  }
+}

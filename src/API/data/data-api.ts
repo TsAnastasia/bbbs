@@ -1,5 +1,5 @@
 import { IDataCites } from "./data-interface";
-import cites from "../dataForAPI/cites.json";
+import cites from "../_dataForAPI/cites.json";
 
 const dataAPI = {
   getCites: (): IDataCites => {

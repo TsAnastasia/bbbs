@@ -1,6 +1,6 @@
 import { IAuth, IUser } from "./auth-interface";
 
-import users from "../dataForAPI/users.json";
+import users from "../_dataForAPI/users.json";
 
 const authAPI = {
   login: (data: IAuth): IUser => {

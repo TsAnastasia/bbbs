@@ -1,6 +1,6 @@
 import { IUser } from "../../API/auth/auth-interface";
 // TODO: change on fun API
-import users from "../../API/dataForAPI/users.json";
+import users from "../../API/_dataForAPI/users.json";
 import {
   AuthActionsEnum,
   SetAuth,
