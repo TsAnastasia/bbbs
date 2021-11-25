@@ -1,9 +1,33 @@
-import React, { ChangeEvent, FC } from "react";
+import { useFormik } from "formik";
+import React, { ChangeEvent, FC, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useAppSelector } from "../../hooks/redux";
+import { login } from "../../redux/auth/auth-actions";
 import AppInput from "../AppInput/AppInput";
+import { validationSchemaLogin as validationSchema } from "./validate";
 
 const LoginForm: FC = () => {
+  const dispatch = useDispatch();
+  const { authError } = useAppSelector((state) => state.auth);
+  const [isPasswordVisible, SetIsPasswordVisible] = useState(false);
+
+  const formik = useFormik({
+    initialValues: {
+      login: "",
+      password: "",
+    },
+    validationSchema,
+    onSubmit: (values) => {
+      dispatch(login(values));
+    },
+  });
+
+  const handleIsPasswordVisibleToggle = () => {
+    SetIsPasswordVisible((state) => !state);
+  };
+
   return (
-    <form>
+    <form onSubmit={formik.handleSubmit}>
       <p>Вход</p>
       <p>
         Вход в личный кабинет доступен наставникам программы «Старшие Братья
@@ -15,23 +39,24 @@ const LoginForm: FC = () => {
       </p>
       <AppInput
         type="text"
-        name="name"
+        name="login"
         title="Логин"
-        value={""}
-        onChange={function (event: ChangeEvent<HTMLInputElement>): void {
-          throw new Error("Function not implemented.");
-        }}
+        value={formik.values.login}
+        onChange={formik.handleChange}
+        error={formik.touched.login ? formik.errors.login : undefined}
       />
       <AppInput
-        type="password"
+        type={isPasswordVisible ? "text" : "password"}
         name="password"
         title="Пароль"
-        value={""}
-        onChange={function (event: ChangeEvent<HTMLInputElement>): void {
-          throw new Error("Function not implemented.");
-        }}
+        value={formik.values.password}
+        onChange={formik.handleChange}
+        error={formik.touched.password ? formik.errors.password : undefined}
       />
-      <button type="button">Показать / скрыть пароль</button>
+      <p>{authError}</p>
+      <button type="button" onClick={handleIsPasswordVisibleToggle}>
+        {`${isPasswordVisible ? "Скрыть" : "Показать"} пароль`}
+      </button>
       <button type="submit">Войти</button>
     </form>
   );

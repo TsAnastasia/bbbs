@@ -10,6 +10,7 @@ interface I {
   className?: string;
   title?: string;
   type?: "text" | "password";
+  error?: string;
 }
 
 const AppInput: FC<I> = ({
@@ -19,16 +20,20 @@ const AppInput: FC<I> = ({
   className,
   type = "text",
   title,
+  error,
 }) => {
   return (
-    <input
-      className={cl(style.appInput, className)}
-      type={type}
-      name={name}
-      placeholder={title}
-      value={value}
-      onChange={onChange}
-    />
+    <div>
+      <input
+        className={cl(style.appInput, className)}
+        type={type}
+        name={name}
+        placeholder={title}
+        value={value}
+        onChange={onChange}
+      />
+      <p>{error}</p>
+    </div>
   );
 };
 

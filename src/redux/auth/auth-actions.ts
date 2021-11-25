@@ -1,4 +1,5 @@
-import { IUser } from "../../API/auth/auth-interface";
+import authAPI from "../../API/auth/auth-api";
+import { IAuth, IUser } from "../../API/auth/auth-interface";
 // TODO: change on fun API
 import users from "../../API/_dataForAPI/users.json";
 import {
@@ -35,22 +36,26 @@ const authActions = {
   }),
 };
 
-export const login = (): ThunkType => (dispatch) => {
-  dispatch(authActions.setAuth(true));
-  dispatch(authActions.setUserData(users[0]));
-};
+export const login =
+  (data: IAuth): ThunkTypeAsync =>
+  async (dispatch) => {
+    dispatch(authActions.setAuthError(null));
+    dispatch(authActions.setAuthLoading(true));
+    try {
+      const user = await authAPI.login(data);
+      dispatch(authActions.setUserData(user));
+      dispatch(authActions.setAuth(true));
+      dispatch(authActions.setLoginOpen(false));
+    } catch (error) {
+      dispatch(authActions.setAuthError((error as Error).message));
+    } finally {
+      dispatch(authActions.setAuthLoading(false));
+    }
+  };
 
-export const logout = (): ThunkTypeAsync => async (dispatch) => {
-  dispatch(authActions.setAuthError(null));
-  dispatch(authActions.setAuthLoading(true));
-  try {
-    dispatch(authActions.setAuth(false));
-    dispatch(authActions.setUserData(null));
-  } catch (error) {
-    dispatch(authActions.setAuthError((error as Error).message));
-  } finally {
-    dispatch(authActions.setAuthLoading(false));
-  }
+export const logout = (): ThunkType => (dispatch) => {
+  dispatch(authActions.setUserData(null));
+  dispatch(authActions.setAuth(false));
 };
 
 export const setLoginOpen =

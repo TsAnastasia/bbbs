@@ -1,11 +1,11 @@
 export interface IAuth {
-  name: string;
+  login: string;
   password: string;
 }
 
 export interface IUser {
   id: number;
-  name: string;
+  login: string;
   city: ICity;
 }
 
