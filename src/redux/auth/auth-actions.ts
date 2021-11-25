@@ -1,7 +1,5 @@
 import authAPI from "../../API/auth/auth-api";
 import { IAuth, IUser } from "../../API/auth/auth-interface";
-// TODO: change on fun API
-import users from "../../API/_dataForAPI/users.json";
 import {
   AuthActionsEnum,
   SetAuth,

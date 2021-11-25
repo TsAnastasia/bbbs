@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import style from "./App.module.scss";
 import Footer from "./components/Footer/Footer";
-import LoginForm from "./components/forms/LoginForm";
+import LoginForm from "./components/forms/login/LoginForm";
 import Header from "./components/Header/Header";
 import Popup from "./components/Popup/Popup";
 import { useAppSelector } from "./hooks/redux";

@@ -1,10 +1,11 @@
 import { useFormik } from "formik";
-import React, { ChangeEvent, FC, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useAppSelector } from "../../hooks/redux";
-import { login } from "../../redux/auth/auth-actions";
-import AppInput from "../AppInput/AppInput";
-import { validationSchemaLogin as validationSchema } from "./validate";
+import React, { FC, useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { useAppSelector } from "../../../hooks/redux";
+import { login } from "../../../redux/auth/auth-actions";
+import AppInput from "../../AppInput/AppInput";
+import { validationSchemaLogin as validationSchema } from "../validate";
 
 const LoginForm: FC = () => {
   const dispatch = useDispatch();
