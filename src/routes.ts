@@ -16,10 +16,14 @@ export enum AppRoutesEnum {
 }
 
 export enum ExternalLinkEnum {
-  FACEBOOK = "https://www.facebook.com/BigBrothers.BigSisters.Russia/",
+  FACEBOOK = "https://www.facebook.com/BigBrothers.BigSisters.Russia",
   VK = "https://vk.com/big.brothers.big.sisters",
-  INSTAGRAM = "https://www.instagram.com/nastavniki_org/",
+  INSTAGRAM = "https://www.instagram.com/nastavniki_org",
   YOUTUBE = "https://www.youtube.com/user/Nastavniki",
+  ORGANIZATION = "https://www.nastavniki.org/o-nas/ob-organizaczii",
+  HELP_MONEY = "https://www.nastavniki.org/campaign/pomoch-dengami",
+  YANDEX_PRAKTIKUM = "https://praktikum.yandex.ru",
+  DESIGN = "https://krkr.design",
 }
 
 type ExternalLinkType = {
