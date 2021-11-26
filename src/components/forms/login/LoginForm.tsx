@@ -4,8 +4,10 @@ import { useDispatch } from "react-redux";
 
 import { useAppSelector } from "../../../hooks/redux";
 import { login } from "../../../redux/auth/auth-actions";
-import AppInput from "../../AppInput/AppInput";
+import AppButton from "../../UI/button/AppButton";
+import AppInput from "../../UI/input/AppInput";
 import { validationSchemaLogin as validationSchema } from "../validate";
+import style from "./LoginRorm.module.scss";
 
 const LoginForm: FC = () => {
   const dispatch = useDispatch();
@@ -28,16 +30,18 @@ const LoginForm: FC = () => {
   };
 
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <p>Вход</p>
-      <p>
-        Вход в личный кабинет доступен наставникам программы «Старшие Братья
-        Старшие Сёстры».
-      </p>
-      <p>
-        Пожалуйста, введите логин и пароль из письма. Если вам не приходило
-        письмо, свяжитесь с вашим куратором.
-      </p>
+    <form onSubmit={formik.handleSubmit} className={style.login}>
+      <p className={style.title}>Вход</p>
+      <div>
+        <p className={style.message}>
+          Вход в личный кабинет доступен наставникам программы «Старшие Братья
+          Старшие Сёстры».
+        </p>
+        <p className={style.message}>
+          Пожалуйста, введите логин и пароль из письма. Если вам не приходило
+          письмо, свяжитесь с вашим куратором.
+        </p>
+      </div>
       <AppInput
         type="text"
         name="login"
@@ -54,11 +58,17 @@ const LoginForm: FC = () => {
         onChange={formik.handleChange}
         error={formik.touched.password ? formik.errors.password : undefined}
       />
-      <p>{authError}</p>
-      <button type="button" onClick={handleIsPasswordVisibleToggle}>
+      <button
+        type="button"
+        onClick={handleIsPasswordVisibleToggle}
+        className={style.passwordVisible}
+      >
         {`${isPasswordVisible ? "Скрыть" : "Показать"} пароль`}
       </button>
-      <button type="submit">Войти</button>
+      <div className={style.submit}>
+        <p className={style.error}>{authError}</p>
+        <AppButton type="submit" text="Войти" />
+      </div>
     </form>
   );
 };

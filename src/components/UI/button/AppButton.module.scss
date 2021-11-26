@@ -1,0 +1,63 @@
+.button {
+  margin: 0;
+  padding: 15px 20px;
+
+  font-family: var(#{--font-proto});
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.2px;
+
+  outline: 0;
+  border: 1px solid;
+  border-radius: 99em;
+
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+}
+
+.buttonGrey {
+  color: var(#{--color-black});
+  background-color: transparent;
+
+  &:hover {
+    background-color: var(#{--color-grey});
+  }
+
+  &:active {
+    color: var(#{--color-background});
+    background-color: var(#{--color-black});
+  }
+
+  &:active:hover {
+    background-color: var(#{--color-dark});
+  }
+}
+
+.buttonBlue {
+  color: var(#{--color-blue});
+  background-color: var(#{--color-background});
+
+  &:hover {
+    background-color: var(#{--color-light-blue});
+  }
+
+  &:active {
+    color: var(#{--color-background});
+    background-color: var(#{--color-blue});
+  }
+
+  &:active:hover {
+    background-color: var(#{--color-dark});
+  }
+}
+
+@media (max-width: 768px) {
+  .button {
+    padding: 10px 15px;
+    
+    font-size: 12px;
+    line-height: 17px;
+  }
+}

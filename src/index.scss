@@ -11,13 +11,18 @@ $color-light-gray: #a7a6a6;
 // --variable: var(#{--variable});
 
 :root {
+  --color-light-blue: #c8d1ff;
   --color-blue: #224cff;
   --color-dark: #2e2468;
   --color-black: #000000;
   --color-background: #f3f2f2;
-  --color-light-gray: #a7a6a6;
+  --color-light-grey: #a7a6a6;
+  --color-grey: #e0e0e0;
+  --color-dark-grey: #464646;
   --color-blackout: rgba(0, 0, 0, 0.6);
   --color-popup: #ffffff;
+  --color-error: #ff4e4e;
+  --color-error-background: #ff4e4e22;
 
   --font-proto: "Open Sans", sans-serif;
   --font-pt-root: "Roboto", sans-serif;
