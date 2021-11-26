@@ -7,7 +7,7 @@ import { login } from "../../../redux/auth/auth-actions";
 import AppButton from "../../UI/button/AppButton";
 import AppInput from "../../UI/input/AppInput";
 import { validationSchemaLogin as validationSchema } from "../validate";
-import style from "./LoginRorm.module.scss";
+import style from "./LoginForm.module.scss";
 
 const LoginForm: FC = () => {
   const dispatch = useDispatch();

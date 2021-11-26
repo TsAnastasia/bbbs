@@ -1,10 +1,14 @@
 import authAPI from "../../API/auth/auth-api";
-import { IAuth, IUser } from "../../API/auth/auth-interface";
+import { IAuth, ICity, IUser } from "../../API/auth/auth-interface";
+import dataAPI from "../../API/data/data-api";
+import { IDataCites } from "../../API/data/data-interface";
 import {
   AuthActionsEnum,
   SetAuth,
   SetAuthError,
   SetAuthLoading,
+  SetChangeCityCities,
+  SetChangeCityOpen,
   SetLoginOpen,
   SetUserData,
   ThunkType,
@@ -30,6 +34,14 @@ const authActions = {
   }),
   setUserData: (data: IUser | null): SetUserData => ({
     type: AuthActionsEnum.SET_USER_DATA,
+    data,
+  }),
+  setChangeCityCities: (data: IDataCites): SetChangeCityCities => ({
+    type: AuthActionsEnum.CHANGE_CITY_CITIES,
+    data,
+  }),
+  setChangeCityOpen: (data: boolean): SetChangeCityOpen => ({
+    type: AuthActionsEnum.CHANGE_CITY_OPEN,
     data,
   }),
 };
@@ -60,4 +72,32 @@ export const setLoginOpen =
   (isOpen: boolean): ThunkType =>
   (dispatch) => {
     dispatch(authActions.setLoginOpen(isOpen));
+  };
+
+export const getAllCities = (): ThunkTypeAsync => async (dispatch) => {
+  try {
+    const data = dataAPI.getCites();
+    dispatch(authActions.setChangeCityCities(data));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const setChangeCityOpen =
+  (isOpen: boolean): ThunkType =>
+  (dispatch) => {
+    dispatch(authActions.setChangeCityOpen(isOpen));
+  };
+
+export const changeUserCity =
+  (newCity: ICity): ThunkTypeAsync =>
+  async (dispatch, getState) => {
+    const user = getState().auth.userData!;
+    try {
+      const data = await authAPI.changeCity(user.id, newCity);
+      dispatch(authActions.setUserData(data));
+      dispatch(authActions.setChangeCityOpen(false));
+    } catch (error) {
+      console.log(error);
+    }
   };

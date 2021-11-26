@@ -7,7 +7,7 @@
   },
   {
     "id": 2,
-    "login": "User",
+    "login": "user",
     "password": "user",
     "city": { "id": 2, "name": "Санкт-Петербург" }
   }

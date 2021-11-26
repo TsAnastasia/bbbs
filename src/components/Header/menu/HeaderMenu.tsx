@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { useAppSelector } from "../../../hooks/redux";
-import { logout } from "../../../redux/auth/auth-actions";
+import { logout, setChangeCityOpen } from "../../../redux/auth/auth-actions";
 import { setMenuOpen } from "../../../redux/header/header-actions";
 import { FOOTER_LINKS, SOCIAL_LINKS } from "../../../routes";
 import styleHeader from "../Header.module.scss";
@@ -18,7 +18,7 @@ const HeaderMenu: FC = () => {
   };
 
   const handleCityChange = () => {
-    // TODO: open popup
+    dispatch(setChangeCityOpen(true));
     handleClose();
   };
 
