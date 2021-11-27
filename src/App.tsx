@@ -2,6 +2,8 @@ import React from "react";
 import { useDispatch } from "react-redux";
 
 import style from "./App.module.scss";
+
+import AppRouter from "./components/AppRouter/AppRouter";
 import Footer from "./components/Footer/Footer";
 import ChangeCityForm from "./components/forms/changeCity/ChangeCityForm";
 import LoginForm from "./components/forms/login/LoginForm";
@@ -27,7 +29,9 @@ function App() {
   return (
     <div className={style.app}>
       <Header />
-      <main className={style.app__main}></main>
+      <main className={style.app__main}>
+        <AppRouter />
+      </main>
       <Footer />
       <Popup isOpen={isLoginOpen} onClose={handleLoginClose} hasButtonClose>
         <LoginForm />

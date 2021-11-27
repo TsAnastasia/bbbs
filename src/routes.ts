@@ -5,11 +5,11 @@ export enum AppRoutesEnum {
   EVENTS = "/events",
   QUESTIONS = "/questions",
   ARCHIVE = "/archive",
-  ARCHIVE_GUIDE = "/archive/guide",
-  ARCHIVE_VIDEO = "/archive/video",
-  ARCHIVE_ARTICLES = "/archive/articles",
-  ARCHIVE_MOVIES = "/archive/movies",
-  ARCHIVE_BOOKS = "/archive/books",
+  ARCHIVE_GUIDE = "guide",
+  ARCHIVE_VIDEO = "video",
+  ARCHIVE_ARTICLES = "articles",
+  ARCHIVE_MOVIES = "movies",
+  ARCHIVE_BOOKS = "books",
   CHILDREN_RIGHTS = "/children-rights",
   STORIES = "/stories",
   PROFILE = "/profile",
@@ -32,7 +32,7 @@ type ExternalLinkType = {
 };
 
 type LinkType = {
-  route: AppRoutesEnum;
+  route: string;
   name: string;
 };
 
@@ -50,11 +50,11 @@ export const HEADER_LINKS: HeaderLinkType[] = [
     route: AppRoutesEnum.ARCHIVE,
     name: "Читать и смотреть",
     children: [
-      { route: AppRoutesEnum.ARCHIVE_GUIDE, name: "Справочник" },
-      { route: AppRoutesEnum.ARCHIVE_VIDEO, name: "Видео" },
-      { route: AppRoutesEnum.ARCHIVE_ARTICLES, name: "Статьи" },
-      { route: AppRoutesEnum.ARCHIVE_MOVIES, name: "Фильмы" },
-      { route: AppRoutesEnum.ARCHIVE_BOOKS, name: "Книги" },
+      { route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_GUIDE}`, name: "Справочник" },
+      { route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_VIDEO}`, name: "Видео" },
+      { route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_ARTICLES}`, name: "Статьи" },
+      { route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_MOVIES}`, name: "Фильмы" },
+      { route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_BOOKS}`, name: "Книги" },
     ],
   },
   { route: AppRoutesEnum.CHILDREN_RIGHTS, name: "Права детей" },
