@@ -1,0 +1,100 @@
+.h1 {
+  font-family: var(--font-title);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 80px;
+}
+
+.h2 {
+  font-family: var(--font-title);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 50px;
+  letter-spacing: 0.5px;
+}
+
+.h3 {
+  font-family: var(--font-title);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.body {
+  font-family: var(--font-text);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.number {
+  font-family: var(--font-title);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 100px;
+  letter-spacing: -2px;
+}
+
+.button {
+  font-family: var(--font-title);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+}
+
+.nav {
+  font-family: var(--font-title);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1280px) {
+  .h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .h2 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .h3 {
+    font-size: 20px;
+    line-height: 34px;
+  }
+
+  .body {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .number {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  .button {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .h2 {
+    font-size: 20px;
+    line-height: 34px;
+  }
+}
