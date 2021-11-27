@@ -1,7 +1,7 @@
 .header {
   margin: 0 auto;
-  padding: 40px 75px;
-  max-width: 1990px;
+  padding: 40px 30px;
+  max-width: 1770px;
   width: 100%;
   box-sizing: border-box;
 
@@ -15,7 +15,7 @@
   transform: translate(-50%, 0);
 }
 
-.header__logo {
+.logo {
   font-family: var(#{--font-title});
   font-style: normal;
   font-weight: 300;
@@ -202,7 +202,6 @@
 
 @media screen and (max-width: 1440px) {
   .header {
-    padding: 40px;
     max-width: 1170px;
   }
 }
@@ -233,7 +232,7 @@
     box-shadow: 0px -5px 5px rgb(0 0 0 / 10%);
   }
 
-  .header__logo {
+  .logo {
     font-size: 18px;
     line-height: 20px;
   }

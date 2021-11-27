@@ -52,7 +52,7 @@ const Header: FC = () => {
       />
       <Link
         to={AppRoutesEnum.MAIN}
-        className={style.header__logo}
+        className={style.logo}
         onClick={handleMenuClose}
       >
         наставники.про

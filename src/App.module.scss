@@ -11,12 +11,36 @@
   background-color: var(#{--color-background});
 }
 
+.main {
+  margin: 0 auto;
+  padding: 30px 30px 120px;
+  max-width: 1770px;
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+@media screen and (max-width: 1440px) {
+  .main {
+    max-width: 1170px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .main {
+    padding-top: 20px;
+    max-width: 770px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+}
+
 @media screen and (max-width: 425px) {
   .app {
     padding-top: 50px;
   }
-}
-
-.app__main {
-  flex: 1;
+  .main {
+    padding: 10px 15px 50px;
+  }
 }

@@ -29,7 +29,7 @@ function App() {
   return (
     <div className={style.app}>
       <Header />
-      <main className={style.app__main}>
+      <main className={style.main}>
         <AppRouter />
       </main>
       <Footer />
