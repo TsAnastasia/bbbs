@@ -24,6 +24,8 @@ export enum ExternalLinkEnum {
   HELP_MONEY = "https://www.nastavniki.org/campaign/pomoch-dengami",
   YANDEX_PRAKTIKUM = "https://praktikum.yandex.ru",
   DESIGN = "https://krkr.design",
+  MENTORING = "https://www.nastavniki.org/volontyorstvo/kak-stat-volonterom/",
+  PARTHERSHIP = "https://www.nastavniki.org/oficzialno/korporativnyim-partnyoram/",
 }
 
 type ExternalLinkType = {
@@ -50,11 +52,26 @@ export const HEADER_LINKS: HeaderLinkType[] = [
     route: AppRoutesEnum.ARCHIVE,
     name: "Читать и смотреть",
     children: [
-      { route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_GUIDE}`, name: "Справочник" },
-      { route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_VIDEO}`, name: "Видео" },
-      { route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_ARTICLES}`, name: "Статьи" },
-      { route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_MOVIES}`, name: "Фильмы" },
-      { route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_BOOKS}`, name: "Книги" },
+      {
+        route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_GUIDE}`,
+        name: "Справочник",
+      },
+      {
+        route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_VIDEO}`,
+        name: "Видео",
+      },
+      {
+        route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_ARTICLES}`,
+        name: "Статьи",
+      },
+      {
+        route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_MOVIES}`,
+        name: "Фильмы",
+      },
+      {
+        route: `${AppRoutesEnum.ARCHIVE}/${AppRoutesEnum.ARCHIVE_BOOKS}`,
+        name: "Книги",
+      },
     ],
   },
   { route: AppRoutesEnum.CHILDREN_RIGHTS, name: "Права детей" },

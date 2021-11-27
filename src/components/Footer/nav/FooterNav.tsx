@@ -9,7 +9,7 @@ const FooterNav: FC = () => {
     <nav className={style.nav}>
       <ul className={style.column}>
         {FOOTER_LINKS.map((item) => (
-          <li className={style.item}>
+          <li className={style.item} key={item.route}>
             <Link
               key={item.route}
               to={item.route}
@@ -22,7 +22,7 @@ const FooterNav: FC = () => {
       </ul>
       <ul className={style.column}>
         {SOCIAL_LINKS.map((item) => (
-          <li className={style.item}>
+          <li className={style.item} key={item.url}>
             <a
               key={item.url}
               href={item.url}
