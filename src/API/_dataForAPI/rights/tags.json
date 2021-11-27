@@ -1,0 +1,8 @@
+[
+  { "id": 14, "name": "ликбез", "slug": "likbez", "order": 1 },
+  { "id": 10, "name": "пенсии", "slug": "pensii", "order": 2 },
+  { "id": 13, "name": "жилье", "slug": "zhile", "order": 3 },
+  { "id": 12, "name": "образование", "slug": "obrazovanie", "order": 4 },
+  { "id": 35, "name": "работа", "slug": "rabota", "order": 5 },
+  { "id": 38, "name": "Правонарушения", "slug": "pravonarusheniya", "order": 7 }
+]
