@@ -2,30 +2,28 @@
 @import "~@fontsource/roboto";
 @import "~@fontsource/open-sans";
 
-$color-blue: #224cff;
-$color-dark: #2e2468;
-$color-black: #000000;
-$color-background: #f3f2f2;
-$color-light-gray: #a7a6a6;
-
 // --variable: var(#{--variable});
 
 :root {
-  --color-light-blue: #c8d1ff;
-  --color-blue: #224cff;
-  --color-dark: #2e2468;
-  --color-black: #000000;
-  --color-background: #f3f2f2;
-  --color-light-grey: #a7a6a6;
-  --color-grey: #e0e0e0;
-  --color-dark-grey: #464646;
-  --color-blackout: rgba(0, 0, 0, 0.6);
   --color-white: #ffffff;
+  --color-background: #f3f2f2;
+  --color-grey-light: #e0e0e0;
+  --color-grey: #a7a6a6;
+  --color-grey-dark: #464646;
+  --color-dark: #1a1a1a;
+  --color-black: #000000;
+  --color-blue-dark: #2e2468;
+  --color-blue: #224cff;
+  --color-blue-light: #c8d1ff;
+  --color-error-light: #f2e5e5;
   --color-error: #ff4e4e;
-  --color-error-background: #ff4e4e22;
+  --color-red: #ff8585;
+  --color-yellow: #f8d162;
+  --color-green: #8cdd94;
+  --color-blackout: rgba(0, 0, 0, 0.6);
 
-  --font-proto: "Open Sans", sans-serif;
-  --font-pt-root: "Roboto", sans-serif;
+  --font-title: "Open Sans", sans-serif;
+  --font-text: "Roboto", sans-serif;
 }
 
 body {

@@ -1,7 +1,7 @@
 .title {
   margin: 0;
 
-  font-family: var(--font-proto);
+  font-family: var(--font-title);
   font-size: 19px;
   line-height: 23px;
   font-weight: 300;
@@ -22,7 +22,7 @@
 
   &:not(:last-child) {
     border-bottom: 1px solid;
-    border-color: var(--color-light-grey);
+    border-color: var(--color-grey);
   }
 }
 
@@ -38,7 +38,7 @@
   margin: 0;
   padding: 0;
 
-  font-family: var(--font-proto);
+  font-family: var(--font-title);
   font-style: normal;
   font-weight: 300;
   font-size: 15px;

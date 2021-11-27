@@ -29,7 +29,7 @@
   width: 100%;
   box-sizing: border-box;
 
-  font-family: var(#{--font-pt-root});
+  font-family: var(#{--font-text});
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -42,20 +42,20 @@
   background-color: var(#{--color-background});
 
   &::placeholder {
-    color: var(#{--color-light-grey});
+    color: var(--color-grey);
   }
 }
 
 .input_error {
   border-color: var(#{--color-error});
-  background-color: var(#{--color-error-background});
+  background-color: var(#{--color-error-light});
 }
 
 .error {
   margin: 0;
   max-width: calc(100% - 40px);
 
-  font-family: var(#{--font-pt-root});
+  font-family: var(#{--font-text});
   font-style: normal;
   font-weight: 400;
   font-size: 14px;

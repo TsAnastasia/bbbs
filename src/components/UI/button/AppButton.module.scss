@@ -2,7 +2,7 @@
   margin: 0;
   padding: 15px 20px;
 
-  font-family: var(#{--font-proto});
+  font-family: var(#{--font-title});
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
@@ -22,7 +22,7 @@
   background-color: transparent;
 
   &:hover {
-    background-color: var(#{--color-grey});
+    background-color: var(--color-grey-light);
   }
 
   &:active {
@@ -31,7 +31,7 @@
   }
 
   &:active:hover {
-    background-color: var(#{--color-dark});
+    background-color: var(--color-blue-dark);
   }
 }
 
@@ -40,7 +40,7 @@
   background-color: var(#{--color-background});
 
   &:hover {
-    background-color: var(#{--color-light-blue});
+    background-color: var(#{--color-blue-light});
   }
 
   &:active {
@@ -49,14 +49,14 @@
   }
 
   &:active:hover {
-    background-color: var(#{--color-dark});
+    background-color: var(--color-blue-dark);
   }
 }
 
 @media (max-width: 768px) {
   .button {
     padding: 10px 15px;
-    
+
     font-size: 12px;
     line-height: 17px;
   }

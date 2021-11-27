@@ -27,7 +27,7 @@
 .link {
   margin: 0;
 
-  font-family: var(--font-proto);
+  font-family: var(--font-title);
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
@@ -43,7 +43,7 @@
   cursor: pointer;
 
   &:hover {
-    color: var(--color-light-blue);
+    color: var(--color-blue-light);
   }
 }
 

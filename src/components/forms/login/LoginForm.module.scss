@@ -12,7 +12,7 @@
   margin: 0 0 16px;
   padding: 0;
 
-  font-family: var(#{--font-proto});
+  font-family: var(#{--font-title});
   font-style: normal;
   font-weight: 300;
   font-size: 23px;
@@ -23,7 +23,7 @@
 .message {
   margin: 0 0 30px;
 
-  font-family: var(#{--font-proto});
+  font-family: var(#{--font-title});
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -39,14 +39,14 @@
   margin: 0;
   padding: 0;
 
-  font-family: var(#{--font-pt-root});
+  font-family: var(#{--font-text});
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
   letter-spacing: 0.2px;
 
-  color: var(#{--color-dark-grey});
+  color: var(--color-grey-dark);
   outline: 0;
   border: 0;
   border-radius: 0;
@@ -71,7 +71,7 @@
   margin: 0;
   max-width: calc(100% - 40px);
 
-  font-family: var(#{--font-pt-root});
+  font-family: var(#{--font-text});
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
