@@ -4,8 +4,8 @@
 
 .content {
   margin: 0 auto;
-  padding: 90px 0 80px;
-  max-width: 1260px;
+  padding: 90px 0;
+  max-width: 1090px;
   width: 100%;
   box-sizing: border-box;
 
@@ -23,11 +23,6 @@
   margin: 0;
   padding: 15px 20px;
 
-  font-family: "Proto", Arial, sans-serif;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 100%;
-  letter-spacing: 0.2px;
   text-decoration: none;
 
   border: 1px solid;
@@ -49,17 +44,11 @@
   flex-direction: row-reverse;
   align-items: flex-end;
   justify-content: flex-end;
+}
 
-  :nth-last-child(1n) {
-    margin: 10px 30px 0 0;
-    padding: 0;
-
-    font-family: var(--font-title);
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 26px;
-  }
+.aboutItem {
+  margin: 10px 30px 0 0;
+  padding: 0;
 }
 
 .copyright {
@@ -82,7 +71,7 @@
 @media (max-width: 1280px) {
   .content {
     padding: 40px 15px 30px;
-    max-width: 770px;
+    max-width: 800px;
 
     grid-template: "logo" "nav" "helping" "about";
     justify-items: center;
@@ -95,12 +84,10 @@
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
+  }
 
-    :nth-last-child(1n) {
-      margin: 5px auto 0;
-      font-size: 12px;
-      line-height: 17px;
-    }
+  .aboutItem {
+    margin: 5px auto 0;
   }
 
   .help {

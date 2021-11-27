@@ -1,15 +1,20 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import { FOOTER_LINKS, SOCIAL_LINKS } from "../../../routes";
+import fontStyle from "../../../assets/styles/fonts.module.scss";
 import style from "./FooterNav.module.scss";
-
+import cl from "classnames";
 const FooterNav: FC = () => {
   return (
-    <nav className={style.footerNav}>
+    <nav className={style.nav}>
       <ul className={style.column}>
         {FOOTER_LINKS.map((item) => (
           <li className={style.item}>
-            <Link key={item.route} to={item.route} className={style.link}>
+            <Link
+              key={item.route}
+              to={item.route}
+              className={cl(fontStyle.nav, style.link)}
+            >
               {item.name}
             </Link>
           </li>
@@ -23,7 +28,7 @@ const FooterNav: FC = () => {
               href={item.url}
               target="_blank"
               rel="noreferrer"
-              className={style.link}
+              className={cl(fontStyle.nav, style.link)}
             >
               {item.name}
             </a>

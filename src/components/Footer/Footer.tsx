@@ -1,7 +1,11 @@
 import React, { FC } from "react";
+import cl from "classnames";
+
+import fontStyle from "../../assets/styles/fonts.module.scss";
+import style from "./Footer.module.scss";
+
 import { ExternalLinkEnum } from "../../routes";
 import Logo from "../UI/logo/Logo";
-import style from "./Footer.module.scss";
 import FooterNav from "./nav/FooterNav";
 
 const Footer: FC = () => {
@@ -10,7 +14,7 @@ const Footer: FC = () => {
       <div className={style.content}>
         <Logo className={style.logo} />
         <a
-          className={style.help}
+          className={cl(fontStyle.button, style.help)}
           href={ExternalLinkEnum.HELP_MONEY}
           target="_blank"
           rel="noopener noreferrer"
@@ -19,7 +23,7 @@ const Footer: FC = () => {
         </a>
         <FooterNav />
         <div className={style.about}>
-          <p className={style.info}>
+          <p className={cl(fontStyle.body, style.info, style.aboutItem)}>
             Концепия и дизайн &mdash; &nbsp;
             <a
               className={style.link}
@@ -30,7 +34,7 @@ const Footer: FC = () => {
               krkr.design
             </a>
           </p>
-          <p className={style.info}>
+          <p className={cl(fontStyle.body, style.info, style.aboutItem)}>
             Разработка &mdash; студенты &nbsp;
             <a
               className={style.link}
@@ -41,7 +45,7 @@ const Footer: FC = () => {
               Яндекс.Практикум
             </a>
           </p>
-          <p className={style.copyright}>
+          <p className={cl(fontStyle.body, style.copyright, style.aboutItem)}>
             &#169; Старшие Братья Старшие Сестры
           </p>
         </div>

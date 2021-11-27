@@ -1,4 +1,4 @@
-.footerNav {
+.nav {
   grid-area: nav;
   justify-self: flex-end;
   display: flex;
@@ -9,7 +9,6 @@
 .column {
   margin: 0;
   padding: 0;
-  min-width: 155px;
 
   list-style: none;
 
@@ -27,16 +26,6 @@
 .link {
   margin: 0;
 
-  font-family: var(--font-title);
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 17px;
-  letter-spacing: 0.2px;
-
-  text-decoration: none;
-  text-transform: uppercase;
-
   color: var(--color-background);
 
   transition: all 0.5s ease-in-out;
@@ -48,13 +37,10 @@
 }
 
 @media (max-width: 1280px) {
-  .footerNav {
-    // grid-area: nav;
+  .nav {
     justify-self: stretch;
-    // display: flex;
     flex-direction: column;
     justify-content: center;
-    // align-items: flex-start;
   }
 
   .column {
@@ -63,7 +49,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
+
     &:not(:last-child) {
       margin: 5px auto 15px;
       padding-bottom: 15px;
