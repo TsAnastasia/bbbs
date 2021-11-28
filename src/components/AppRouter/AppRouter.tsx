@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Navigate, RouteObject, useRoutes } from "react-router-dom";
 
 import AboutPage from "../../pages/about/AboutPage";
+import RightsPage from "../../pages/rights/RightsPage";
 import { AppRoutesEnum } from "../../routes";
 
 const appRoutes: RouteObject[] = [
@@ -23,7 +24,7 @@ const appRoutes: RouteObject[] = [
       { path: AppRoutesEnum.ARCHIVE_BOOKS, element: "ARCHIVE_BOOKS" },
     ],
   },
-  { path: AppRoutesEnum.CHILDREN_RIGHTS, element: "CHILDREN_RIGHTS" },
+  { path: AppRoutesEnum.CHILDREN_RIGHTS, element: <RightsPage /> },
   { path: AppRoutesEnum.STORIES, element: "STORIES" },
   { path: AppRoutesEnum.PROFILE, element: "PROFILE" },
 ];
