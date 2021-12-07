@@ -1,14 +1,19 @@
 import rightsAPI from "../../API/rights/rights-api";
-import { IRightsTag } from "../../API/rights/rights-interface";
+import { IRightsRes, IRightsTag } from "../../API/rights/rights-interface";
 import {
   RightsActionsEnum,
+  SetResults,
   SetTags,
   SetTagsSelected,
   ThunkType,
   ThunkTypeAsync,
 } from "./rights-type";
 
-const rightsActions = {
+const actions = {
+  setResults: (data: IRightsRes): SetResults => ({
+    type: RightsActionsEnum.RESULTS,
+    data,
+  }),
   setTags: (data: IRightsTag[]): SetTags => ({
     type: RightsActionsEnum.TAGS,
     data,
@@ -19,10 +24,21 @@ const rightsActions = {
   }),
 };
 
+export const getRightsResults =
+  (tags: IRightsTag[], limit: number, page: number): ThunkTypeAsync =>
+  async (dispatch) => {
+    try {
+      const res = await rightsAPI.getRights(tags, limit, page);
+      dispatch(actions.setResults(res));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 export const getRightsTags = (): ThunkTypeAsync => async (dispatch) => {
   try {
     const data = await rightsAPI.getTags();
-    dispatch(rightsActions.setTags(data));
+    dispatch(actions.setTags(data));
   } catch (error) {
     console.log(error);
   }
@@ -31,5 +47,5 @@ export const getRightsTags = (): ThunkTypeAsync => async (dispatch) => {
 export const setRightsTagsSelected =
   (data: IRightsTag[]): ThunkType =>
   (dispatch) => {
-    dispatch(rightsActions.setTagsSelected(data));
+    dispatch(actions.setTagsSelected(data));
   };
