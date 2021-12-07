@@ -1,0 +1,105 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  margin: 0 50px 0 0;
+
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: url("../../assets/images/icons/arrow.svg");
+  background-position: center;
+  background-size: 30px;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+  transform: rotate(180deg);
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+.arrow_back {
+  margin: 0 0 0 50px;
+  transform: none;
+}
+
+.arrow_hidden {
+  margin: 0;
+  width: 0;
+  visibility: hidden;
+  // display: none;
+  opacity: 0;
+}
+
+.pages {
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page {
+  min-height: 50px;
+  min-width: 50px;
+
+  outline: 0;
+  border: solid 1px transparent;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--color-black);
+
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    border-color: var(--color-grey);
+  }
+}
+
+.page_selected {
+  border-color: var(--color-black);
+}
+
+.ellipsis {
+  margin: 0;
+  color: var(--color-black);
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    width: 30px;
+    height: 30px;
+    margin: 0 30px 0 0;
+    background-size: 25px;
+  }
+
+  .arrow_back {
+    margin: 0 0 0 30px;
+  }
+
+  .page {
+    min-height: 40px;
+    min-width: 40px;
+  }
+}
+
+@media (max-width: 425px) {
+  .arrow {
+    width: 25px;
+    height: 25px;
+    margin: 0 10px 0 0;
+    background-size: 20px;
+  }
+
+  .arrow_back {
+    margin: 0 0 0 10px;
+  }
+}
