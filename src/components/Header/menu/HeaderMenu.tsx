@@ -6,8 +6,8 @@ import { useAppSelector } from "../../../hooks/redux";
 import { logout, setChangeCityOpen } from "../../../redux/auth/auth-actions";
 import { setMenuOpen } from "../../../redux/header/header-actions";
 import { FOOTER_LINKS, SOCIAL_LINKS } from "../../../routes";
-import styleHeader from "../Header.module.scss";
-import style from "./HeaderMenu.module.scss";
+import styleHeader from "../header.module.scss";
+import style from "./headerMenu.module.scss";
 
 const HeaderMenu: FC = () => {
   const dispatch = useDispatch();

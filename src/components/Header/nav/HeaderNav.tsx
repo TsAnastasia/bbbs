@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
 import { HEADER_LINKS } from "../../../routes";
-import style from "../Header.module.scss";
+import style from "../header.module.scss";
 
 const HeaderNav: FC = () => {
   return (

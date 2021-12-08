@@ -1,10 +1,9 @@
-import React, { FC } from "react";
 import cl from "classnames";
+import React, { FC } from "react";
 
 import fontStyle from "../../assets/styles/fonts.module.scss";
-import style from "./AboutPage.module.scss";
-
 import Logo from "../../components/UI/logo/Logo";
+import style from "./aboutPage.module.scss";
 import AboutActions from "./actions/AboutActions";
 
 const AboutPage: FC = () => {

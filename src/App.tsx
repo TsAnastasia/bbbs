@@ -1,8 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import style from "./App.module.scss";
-
+import style from "./app.module.scss";
 import AppRouter from "./components/AppRouter/AppRouter";
 import Footer from "./components/Footer/Footer";
 import ChangeCityForm from "./components/forms/changeCity/ChangeCityForm";

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { IRightsCard } from "../../../API/rights/rights-interface";
 import fontStyle from "../../../assets/styles/fonts.module.scss";
 import { AppRoutesEnum } from "../../../routes";
-import style from "./RightsCard.module.scss";
+import style from "./rightsCard.module.scss";
 
 interface I {
   card: IRightsCard;

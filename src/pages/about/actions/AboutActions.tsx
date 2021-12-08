@@ -1,11 +1,9 @@
+import cl from "classnames";
 import React, { ReactNode } from "react";
 
-import cl from "classnames";
-
 import fontStyle from "../../../assets/styles/fonts.module.scss";
-import style from "./AboutActions.module.scss";
-
 import { ExternalLinkEnum } from "../../../routes";
+import style from "./aboutActions.module.scss";
 
 interface IItem {
   title: string;

@@ -1,11 +1,10 @@
-import React, { FC } from "react";
 import cl from "classnames";
+import React, { FC } from "react";
 
 import fontStyle from "../../assets/styles/fonts.module.scss";
-import style from "./Footer.module.scss";
-
 import { ExternalLinkEnum } from "../../routes";
 import Logo from "../UI/logo/Logo";
+import style from "./footer.module.scss";
 import FooterNav from "./nav/FooterNav";
 
 const Footer: FC = () => {

@@ -1,6 +1,7 @@
-import React, { FC } from "react";
-import style from "./AppButton.module.scss";
 import cl from "classnames";
+import React, { FC } from "react";
+
+import style from "./appButton.module.scss";
 
 interface I {
   type: "submit" | "button";

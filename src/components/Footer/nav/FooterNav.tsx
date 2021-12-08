@@ -1,9 +1,11 @@
+import cl from "classnames";
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import { FOOTER_LINKS, SOCIAL_LINKS } from "../../../routes";
+
 import fontStyle from "../../../assets/styles/fonts.module.scss";
-import style from "./FooterNav.module.scss";
-import cl from "classnames";
+import { FOOTER_LINKS, SOCIAL_LINKS } from "../../../routes";
+import style from "./footerNav.module.scss";
+
 const FooterNav: FC = () => {
   return (
     <nav className={style.nav}>

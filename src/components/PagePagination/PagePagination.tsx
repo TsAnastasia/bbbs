@@ -1,7 +1,8 @@
 import cl from "classnames";
 import React, { FC, useEffect, useState } from "react";
-import style from "./PagePagination.module.scss";
+
 import fontStyle from "../../assets/styles/fonts.module.scss";
+import style from "./pagePagination.module.scss";
 
 interface I {
   selected: number;

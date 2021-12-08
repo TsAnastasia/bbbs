@@ -1,7 +1,7 @@
 import cl from "classnames";
 import React, { ChangeEventHandler, FC } from "react";
 
-import style from "./AppInput.module.scss";
+import style from "./appInput.module.scss";
 
 interface I {
   name: string;

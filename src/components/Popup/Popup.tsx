@@ -1,7 +1,7 @@
 import cl from "classnames";
 import React, { FC, useEffect, useState } from "react";
 
-import style from "./Popup.module.scss";
+import style from "./popup.module.scss";
 
 interface I {
   isOpen: boolean;

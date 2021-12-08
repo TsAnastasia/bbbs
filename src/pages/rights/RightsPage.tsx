@@ -13,7 +13,7 @@ import {
   setRightsTagsSelected,
 } from "../../redux/rights/rights-actions";
 import RightsCard from "./card/RightsCard";
-import style from "./RightsPage.module.scss";
+import style from "./rightsPage.module.scss";
 
 const RightsPage: FC = () => {
   const dispatch = useDispatch();

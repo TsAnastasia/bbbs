@@ -1,12 +1,10 @@
-import React, { FC } from "react";
 import cl from "classnames";
-
-import style from "./Logo.module.scss";
+import React, { FC } from "react";
 
 import LogoImageBlue from "../../../assets/images/logo-blue.svg";
 import LogoImage from "../../../assets/images/logo.svg";
-
 import { ExternalLinkEnum } from "../../../routes";
+import style from "./logo.module.scss";
 
 interface I {
   className?: string;

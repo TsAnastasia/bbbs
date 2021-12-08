@@ -7,7 +7,7 @@ import { useAppSelector } from "../../hooks/redux";
 import { setLoginOpen } from "../../redux/auth/auth-actions";
 import { setMenuOpen } from "../../redux/header/header-actions";
 import { AppRoutesEnum } from "../../routes";
-import style from "./Header.module.scss";
+import style from "./header.module.scss";
 import HeaderMenu from "./menu/HeaderMenu";
 import HeaderNav from "./nav/HeaderNav";
 

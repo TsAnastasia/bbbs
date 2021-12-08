@@ -1,7 +1,7 @@
-import React, { FC, useEffect, useState } from "react";
 import cl from "classnames";
+import React, { FC, useEffect, useState } from "react";
 
-import style from "./PageTags.module.scss";
+import style from "./pageTags.module.scss";
 
 interface ITag {
   id: number;

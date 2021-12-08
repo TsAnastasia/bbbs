@@ -1,10 +1,10 @@
 import React, { FC, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { ICity } from "../../../API/auth/auth-interface";
 
+import { ICity } from "../../../API/auth/auth-interface";
 import { useAppSelector } from "../../../hooks/redux";
 import { changeUserCity, getAllCities } from "../../../redux/auth/auth-actions";
-import style from "./ChangeCityForm.module.scss";
+import style from "./changeCityForm.module.scss";
 
 const ChangeCityForm: FC = () => {
   const dispatch = useDispatch();
