@@ -1,6 +1,7 @@
 import rightsTags from "../_dataForAPI/rights/tags.json";
 import allRights from "../_dataForAPI/rights/all.json";
-import { IRightsRes, IRightsTag } from "./rights-interface";
+import rightsData from "../_dataForAPI/rights/rights.json";
+import { IRightsArticle, IRightsRes, IRightsTag } from "./rights-interface";
 
 const rightsAPI = {
   getTags: () => {
@@ -25,8 +26,26 @@ const rightsAPI = {
       page: page || 1,
     });
   },
-  getArticle: (id: number) => {
-    return Promise.resolve();
+  getArticle: (id: number, tags: IRightsTag[]) => {
+    const res = rightsData.find((i) => i.id === id);
+    if (!res) return Promise.reject({ message: "Rights article not found" });
+    const rights =
+      tags.length > 0
+        ? allRights.filter((r) =>
+            r.tags.some((t) => tags.some((i) => i.id === t.id))
+          )
+        : allRights;
+    const index = rights.findIndex((i) => i.id === id);
+    const nextArticle =
+      rights.length === 0
+        ? null
+        : index === 0
+        ? rights[rights.length - 1]
+        : rights[index - 1];
+    return Promise.resolve<IRightsArticle>({
+      ...res,
+      nextArticle,
+    });
   },
 };
 

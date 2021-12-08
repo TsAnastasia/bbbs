@@ -3,6 +3,7 @@ import { Navigate, RouteObject, useRoutes } from "react-router-dom";
 
 import AboutPage from "../../pages/about/AboutPage";
 import RightsPage from "../../pages/rights/RightsPage";
+import RightsArticlePage from "../../pages/rightsArticle/rightsArticlePage";
 import { AppRoutesEnum } from "../../routes";
 
 const appRoutes: RouteObject[] = [
@@ -29,7 +30,7 @@ const appRoutes: RouteObject[] = [
     children: [
       { path: "*", element: <Navigate to={AppRoutesEnum.ARCHIVE} /> },
       { path: "", element: <RightsPage /> },
-      { path: ":id", element: "rights art" },
+      { path: ":rightId", element: <RightsArticlePage /> },
     ],
   },
   { path: AppRoutesEnum.STORIES, element: "STORIES" },
