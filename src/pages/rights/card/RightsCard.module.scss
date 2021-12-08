@@ -1,0 +1,73 @@
+.root {
+  position: relative;
+  display: block;
+  &:after {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.card {
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card_shape_square {
+  border-radius: 0;
+}
+
+.card_shape_round {
+  border-radius: 300px;
+}
+
+.card_shape_arch {
+  border-radius: 300px 300px 3px 3px;
+}
+
+.card_color_green {
+  background-color: var(--color-green);
+}
+
+.card_color_yellow {
+  background-color: var(--color-yellow);
+}
+.card_color_red {
+  background-color: var(--color-red);
+}
+.card_color_blue {
+  background-color: var(--color-blue-light);
+}
+.title {
+  margin: 0;
+  max-width: 310px;
+
+  text-align: center;
+  color: var(--color-dark);
+}
+
+.tags {
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  padding: 2px 7px;
+  margin: 5px;
+
+  border-radius: 99em;
+  color: var(--color-dark);
+  background-color: var(--color-tag);
+}

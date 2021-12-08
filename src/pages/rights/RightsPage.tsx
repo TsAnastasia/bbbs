@@ -1,6 +1,10 @@
+import cl from "classnames";
 import React, { FC, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { IRightsTag } from "../../API/rights/rights-interface";
+import fontStyle from "../../assets/styles/fonts.module.scss";
+import PagePagination from "../../components/PagePagination/PagePagination";
 import PageTags from "../../components/PageTags/PageTags";
 import { useAppSelector } from "../../hooks/redux";
 import {
@@ -8,11 +12,8 @@ import {
   getRightsTags,
   setRightsTagsSelected,
 } from "../../redux/rights/rights-actions";
-import cl from "classnames";
-
-import fontStyle from "../../assets/styles/fonts.module.scss";
+import RightsCard from "./card/RightsCard";
 import style from "./RightsPage.module.scss";
-import PagePagination from "../../components/PagePagination/PagePagination";
 
 const RightsPage: FC = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,10 @@ const RightsPage: FC = () => {
   );
   const wPage = document.documentElement.clientWidth;
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(wPage > 1440 ? 16 : wPage > 768 ? 12 : 4);
+  const [limit, setLimit] = useState(wPage > 1440 ? 16 : wPage > 1280 ? 12 : 4);
+  const [row, setRow] = useState(
+    wPage > 1440 ? 4 : wPage > 1280 ? 3 : wPage > 768 ? 2 : 1
+  );
 
   useEffect(() => {
     dispatch(getRightsTags());
@@ -33,13 +37,14 @@ const RightsPage: FC = () => {
 
   useEffect(() => {
     setPage(1);
-  }, [tags_selected]);
+  }, [tags_selected, limit]);
 
   useState(() => {
     const handleResize = () => {
       setTimeout(() => {
         const w = document.documentElement.clientWidth;
-        setLimit(w > 1440 ? 16 : w > 768 ? 12 : 4);
+        setLimit(w > 1440 ? 16 : w > 1280 ? 12 : 4);
+        setRow(w > 1440 ? 4 : w > 1280 ? 3 : w > 768 ? 2 : 1);
       }, 1000);
     };
 
@@ -63,16 +68,28 @@ const RightsPage: FC = () => {
         setSelected={(v: IRightsTag[]) => dispatch(setRightsTagsSelected(v))}
       />
       <section>
-        {rights.results.map((r) => (
-          <p key={r.id}>{r.title}</p>
-        ))}
-        <PagePagination
-          selected={page}
-          count={Math.ceil(rights.count / limit)}
-          onClick={(v: number) => {
-            setPage(v);
-          }}
-        />
+        <ul className={style.list}>
+          {rights.results.map((item, index) => (
+            <>
+              <li key={item.id} className={style.list_item}>
+                <RightsCard card={item} index={limit * (page - 1) + index} />
+              </li>
+              {(index + 1) % row === 0 &&
+                index !== rights.results.length - 1 && (
+                  <span className={style.separator} />
+                )}
+            </>
+          ))}
+        </ul>
+        {rights.count > limit && (
+          <PagePagination
+            selected={page}
+            count={Math.ceil(rights.count / limit)}
+            onClick={(v: number) => {
+              setPage(v);
+            }}
+          />
+        )}
       </section>
     </>
   );

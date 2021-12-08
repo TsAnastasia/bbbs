@@ -24,7 +24,14 @@ const appRoutes: RouteObject[] = [
       { path: AppRoutesEnum.ARCHIVE_BOOKS, element: "ARCHIVE_BOOKS" },
     ],
   },
-  { path: AppRoutesEnum.CHILDREN_RIGHTS, element: <RightsPage /> },
+  {
+    path: AppRoutesEnum.CHILDREN_RIGHTS,
+    children: [
+      { path: "*", element: <Navigate to={AppRoutesEnum.ARCHIVE} /> },
+      { path: "", element: <RightsPage /> },
+      { path: ":id", element: "rights art" },
+    ],
+  },
   { path: AppRoutesEnum.STORIES, element: "STORIES" },
   { path: AppRoutesEnum.PROFILE, element: "PROFILE" },
 ];
