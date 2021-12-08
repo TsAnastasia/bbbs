@@ -1,5 +1,5 @@
 import cl from "classnames";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, Fragment, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { IRightsTag } from "../../API/rights/rights-interface";
@@ -70,15 +70,15 @@ const RightsPage: FC = () => {
       <section>
         <ul className={style.list}>
           {rights.results.map((item, index) => (
-            <>
-              <li key={item.id} className={style.list_item}>
+            <Fragment key={item.id}>
+              <li className={style.list_item}>
                 <RightsCard card={item} index={limit * (page - 1) + index} />
               </li>
               {(index + 1) % row === 0 &&
                 index !== rights.results.length - 1 && (
                   <span className={style.separator} />
                 )}
-            </>
+            </Fragment>
           ))}
         </ul>
         {rights.count > limit && (
