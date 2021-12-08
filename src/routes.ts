@@ -13,6 +13,7 @@ export enum AppRoutesEnum {
   CHILDREN_RIGHTS = "/children-rights",
   STORIES = "/stories",
   PROFILE = "/profile",
+  NOT_FOUND = "/not-found",
 }
 
 export enum ExternalLinkEnum {

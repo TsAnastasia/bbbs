@@ -2,12 +2,13 @@ import React, { FC } from "react";
 import { Navigate, RouteObject, useRoutes } from "react-router-dom";
 
 import AboutPage from "../../pages/about/AboutPage";
+import NotFoundPage from "../../pages/notFound/notFoundPage";
 import RightsPage from "../../pages/rights/RightsPage";
 import RightsArticlePage from "../../pages/rightsArticle/rightsArticlePage";
 import { AppRoutesEnum } from "../../routes";
 
 const appRoutes: RouteObject[] = [
-  { path: "*", element: "not found" },
+  { path: "*", element: <NotFoundPage /> },
   { path: AppRoutesEnum.MAIN, element: "MAIN" },
   { path: AppRoutesEnum.ABOUT, element: <AboutPage /> },
   { path: AppRoutesEnum.CALENDAR, element: "CALENDAR" },

@@ -1,11 +1,13 @@
 import React, { FC, useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import rightsAPI from "../../API/rights/rights-api";
 import { IRightsArticle } from "../../API/rights/rights-interface";
 import { useAppSelector } from "../../hooks/redux";
+import { AppRoutesEnum } from "../../routes";
 
 const RightsArticlePage: FC = () => {
   const { rightId } = useParams();
+  const navigate = useNavigate();
   const { tags_selected } = useAppSelector((state) => state.rights);
   const [data, setData] = useState({} as IRightsArticle);
 
@@ -13,8 +15,11 @@ const RightsArticlePage: FC = () => {
     rightsAPI
       .getArticle(+rightId!, tags_selected)
       .then((res) => setData(res))
-      .catch((err) => console.log(err));
-  }, [tags_selected, rightId]);
+      .catch((err) => {
+        console.log(err);
+        navigate(AppRoutesEnum.NOT_FOUND);
+      });
+  }, [tags_selected, rightId, navigate]);
 
   return (
     <>
