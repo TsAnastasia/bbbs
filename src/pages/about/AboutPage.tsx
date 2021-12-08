@@ -11,8 +11,8 @@ const AboutPage: FC = () => {
     <>
       <section className={style.intro} aria-label="Кратко о проекте">
         <p className={cl(fontStyle.h2, style.description)}>
-          Наставники.про&nbsp;&ndash; цифоровая информационная платформа
-          огрганизации &laquo;Старшие Братья Старшие Сестры&raquo;. Созданная
+          Наставники.про&nbsp;&ndash; цифровая информационная платформа
+          организации &laquo;Старшие Братья Старшие Сестры&raquo;. Созданная
           для поддержки наставников программы.
         </p>
         <Logo className={style.logo} color="blue" />
