@@ -1,5 +1,10 @@
-import React, { FC } from "react";
-import { Navigate, RouteObject, useRoutes } from "react-router-dom";
+import React, { FC, useLayoutEffect } from "react";
+import {
+  Navigate,
+  RouteObject,
+  useLocation,
+  useRoutes,
+} from "react-router-dom";
 
 import AboutPage from "../../pages/about/AboutPage";
 import NotFoundPage from "../../pages/notFound/notFoundPage";
@@ -40,6 +45,11 @@ const appRoutes: RouteObject[] = [
 
 const AppRouter: FC = () => {
   const routing = useRoutes(appRoutes);
+  const location = useLocation();
+
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return routing;
 };

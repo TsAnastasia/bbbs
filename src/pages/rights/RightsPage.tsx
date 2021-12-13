@@ -1,5 +1,5 @@
 import cl from "classnames";
-import React, { FC, Fragment, useEffect, useState } from "react";
+import React, { FC, Fragment, useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { IRightsTag } from "../../API/rights/rights-interface";
@@ -26,6 +26,15 @@ const RightsPage: FC = () => {
   const [row, setRow] = useState(
     wPage > 1440 ? 4 : wPage > 1280 ? 3 : wPage > 768 ? 2 : 1
   );
+  const rightsRef = useRef<HTMLHeadingElement>(null);
+
+  const handleTogglePage = (v: number) => {
+    window.scrollTo({
+      behavior: "smooth",
+      top: rightsRef.current?.offsetTop,
+    });
+    setPage(v);
+  };
 
   useEffect(() => {
     dispatch(getRightsTags());
@@ -57,7 +66,9 @@ const RightsPage: FC = () => {
 
   return (
     <>
-      <h1 className={cl(fontStyle.h1, style.title)}>Права детей</h1>
+      <h1 className={cl(fontStyle.h1, style.title)} ref={rightsRef}>
+        Права детей
+      </h1>
       <PageTags
         className={style.tags}
         tags={tags.map((tag) => ({
@@ -85,9 +96,7 @@ const RightsPage: FC = () => {
           <PagePagination
             selected={page}
             count={Math.ceil(rights.count / limit)}
-            onClick={(v: number) => {
-              setPage(v);
-            }}
+            onClick={handleTogglePage}
           />
         )}
       </section>
