@@ -28,7 +28,8 @@ const rightsAPI = {
   },
   getArticle: (id: number, tags: IRightsTag[]) => {
     const res = rightsData.find((i) => i.id === id);
-    if (!res) return Promise.reject({ message: "Rights article not found" });
+    if (!res)
+      return Promise.reject({ message: `Rights article id = ${id} not found` });
     const rights =
       tags.length > 0
         ? allRights.filter((r) =>

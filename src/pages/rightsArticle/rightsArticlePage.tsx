@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import { Link } from "react-router-dom";
 import rightsAPI from "../../API/rights/rights-api";
 import { IRightsArticle } from "../../API/rights/rights-interface";
 import { useAppSelector } from "../../hooks/redux";
@@ -23,14 +24,17 @@ const RightsArticlePage: FC = () => {
 
   return (
     <>
-      <h1>
-        RightsArticlePage
-        {`tags = ${tags_selected.map((i) => i.name).join(",")}`}
-        {`id = ${rightId}`}
-        {`title = ${data.title}`}
-        {`next = ${data.nextArticle?.id}`}
-      </h1>
-      <div>{data.body}</div>
+      <section>
+        <h1>{data.title}</h1>
+        <p>{data.description}</p>
+      </section>
+      {data.body}
+
+      <section>
+        <Link to={`${AppRoutesEnum.CHILDREN_RIGHTS}/${data.nextArticle?.id}`}>
+          {data.nextArticle?.title}
+        </Link>
+      </section>
     </>
   );
 };
